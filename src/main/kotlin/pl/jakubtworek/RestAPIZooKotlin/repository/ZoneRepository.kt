@@ -1,0 +1,16 @@
+package pl.jakubtworek.RestAPIZooKotlin.repository
+
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.Query
+import org.springframework.stereotype.Repository
+import pl.jakubtworek.RestAPIZooKotlin.entity.Zone
+
+@Repository
+interface ZoneRepository : JpaRepository<Zone, Long>{
+    fun saveAndFlush(zone: Zone) : Zone
+    fun countZoneByAnimals() : Int
+    @Query("SELECT z FROM Zone z INNER JOIN Animal a ON a.zone.id = z.id GROUP BY z.id ORDER BY COUNT(a) ASC LIMIT 1")
+    fun findZoneByWithTheLowestAmountOfAnimals()
+    @Query("SELECT z FROM Zone z INNER JOIN Animal a ON a.zone.id = z.id INNER JOIN AnimalType at ON at.id = a.animalType.id GROUP BY z.id ORDER BY SUM(at.amountOfFood) DESC LIMIT 1")
+    fun findZoneByWithTheMostAmountOfFoodNeeded()
+}
