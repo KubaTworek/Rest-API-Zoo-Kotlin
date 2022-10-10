@@ -5,5 +5,6 @@ import javax.persistence.*
 data class ZoneDTO(
                  var id: Long,
                  var name: String,
-                 var animals: MutableList<AnimalDTO>
-)
+){
+    constructor(id: Long, name: String, animals: MutableList<AnimalDTO>) : this(id, name)
+}

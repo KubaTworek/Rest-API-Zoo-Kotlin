@@ -5,6 +5,7 @@ import javax.persistence.*
 data class AnimalTypeDTO(
         var id: Long,
         var type: String,
-        var amountOfFood: Int,
-        var animals: MutableList<AnimalDTO>
-)
+        var amountOfFood: Int
+){
+        constructor(id: Long, type: String, amountOfFood: Int, animals: MutableList<AnimalDTO>) : this(id, type, amountOfFood)
+}
