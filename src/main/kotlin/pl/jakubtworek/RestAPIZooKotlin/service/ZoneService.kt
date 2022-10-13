@@ -6,6 +6,6 @@ import java.util.*
 interface ZoneService {
     fun saveAndFlush(zone: Zone) : Zone
     fun findZoneByName(name: String) : Zone
-    fun findZoneByWithTheLowestAmountOfAnimals() : Zone
-    fun findZoneByWithTheMostAmountOfFoodNeeded() : Zone
+/*    fun findZoneByWithTheLowestAmountOfAnimals() : Zone
+    fun findZoneByWithTheMostAmountOfFoodNeeded() : Zone*/
 }

@@ -12,6 +12,7 @@ import pl.jakubtworek.RestAPIZooKotlin.service.ZoneService
 
 @RestController
 class ZoneController(val zoneService: ZoneService) {
+/*
     @GetMapping("/zones/highest-food")
     fun getZoneByWithTheMostAmountOfFoodNeeded() : ResponseEntity<ZoneDTO> {
         val z = zoneService.findZoneByWithTheMostAmountOfFoodNeeded()
@@ -23,6 +24,7 @@ class ZoneController(val zoneService: ZoneService) {
         val z = zoneService.findZoneByWithTheLowestAmountOfAnimals()
         return ok(ZoneDTO(z.id,z.name,creatingAnimalList(z)))
     }
+*/
 
     @PostMapping("/zones")
     fun saveZone(@RequestBody zone: Zone) : ResponseEntity<Unit> {

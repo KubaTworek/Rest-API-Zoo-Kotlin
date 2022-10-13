@@ -19,12 +19,12 @@ class ZoneServiceImpl(val zoneRepository: ZoneRepository) : ZoneService {
         return zoneRepository.findZoneByName(name)
     }
 
-    override fun findZoneByWithTheLowestAmountOfAnimals(): Zone {
+/*    override fun findZoneByWithTheLowestAmountOfAnimals(): Zone {
         return zoneRepository.findZoneByWithTheLowestAmountOfAnimals()
     }
 
     override fun findZoneByWithTheMostAmountOfFoodNeeded(): Zone {
         return zoneRepository.findZoneByWithTheMostAmountOfFoodNeeded()
-    }
+    }*/
 
 }
